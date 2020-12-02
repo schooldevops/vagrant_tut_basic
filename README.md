@@ -98,3 +98,33 @@ vagrant@vagrant:~$
 vagrant reload
 ```
 
+### 설치된 리눅스 버젼 확인 
+
+1. ubuntu
+```
+cat /etc/issue
+Ubuntu 18.04.3 LTS \n \l
+```
+
+2. centos
+```
+cat /etc/redhat-release
+```
+
+3. general
+```
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.3 LTS"
+NAME="Ubuntu"
+VERSION="18.04.3 LTS (Bionic Beaver)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04.3 LTS"
+VERSION_ID="18.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+```
+
+
