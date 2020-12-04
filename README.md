@@ -127,4 +127,63 @@ HOME_URL="https://www.ubuntu.com/"
 SUPPORT_URL="https://help.ubuntu.com/"
 ```
 
+## Vagrant box
 
+### vagrant box list 확인하기. 
+
+local 에 설치된 vagrant box 목록을 확인할 수 있다. 
+
+```
+vagrant box list
+bento/ubuntu-16.04  (virtualbox, 202010.24.0)
+hashicorp/bionic64  (virtualbox, 1.0.282)
+hashicorp/precise64 (virtualbox, 1.1.0)
+ubuntu/xenial64     (virtualbox, 20201201.0.0)
+
+```
+
+### vagrant box 추가힉. 
+
+[https://app.vagrantup.com/boxes/search](https://app.vagrantup.com/boxes/search) 혹은 
+[http://www.vagrantbox.es/](http://www.vagrantbox.es/) 에서 검색
+
+vagrant box <title> <url>
+
+```
+vagrant box add centos7 https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box
+```
+
+### vagrant 패키징하기. 
+
+```
+vagrant package --output custom-trusty.box
+```
+
+### local vagrant box 등록하기
+
+```
+vagrant box add Custom-Trusty custom-trusty.box
+```
+
+```
+➜  vagrant_tut git:(master) ✗ vagrant box list
+Custom-Trusty       (virtualbox, 0)
+bento/ubuntu-16.04  (virtualbox, 202010.24.0)
+centos7             (virtualbox, 0)
+hashicorp/bionic64  (virtualbox, 1.0.282)
+hashicorp/precise64 (virtualbox, 1.1.0)
+ubuntu/xenial64     (virtualbox, 20201201.0.0)
+```
+
+### vagrant box 제거하기
+
+```
+➜  vagrant_tut git:(master) ✗ vagrant box remove Custom-Trusty
+Removing box 'Custom-Trusty' (v0) with provider 'virtualbox'...
+```
+
+### vagrant update
+
+```
+vagrant box update
+```
